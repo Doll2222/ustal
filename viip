@@ -93,6 +93,7 @@
 
 <section id="countdown">
   <h2>Кері санау</h2>
+  <div class="countdown" id="timer">Жүктелуде...</div>
 </section>
 
 <script>
