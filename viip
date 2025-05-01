@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ажибаевтер отбасының түлектер кеші</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      /* ВСТАВЬ СВОЮ КАРТИНКУ: замените background.jpg на имя вашей картинки */
+      background: url('vip.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #00ffff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h1, h2 {
+      color: #00ffff;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    .countdown {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    .map-link {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">Шақыру</a>
+  <a href="#place">Өтетін орны</a>
+  <a href="#schedule">Бағдарлама</a>
+  <a href="#countdown">Кері санау</a>
+</nav>
+
+<section id="about">
+  <h1>Ажибаевтер отбасының түлектер кешіне шақыру</h1>
+  <p>Құрметті туыстар мен достар!<br>
+  Сіздерді отбасымыз үшін маңызды оқиға — <strong>екі ұлымыздың және қызымыздың түлектер кешіне</strong> шақырамыз:
+  Мереке — <strong>Назарбаев Университетінің</strong> түлегі,
+  Мерей — <strong>НИШ мектебінің</strong> түлегі,
+  Жанерке — <strong>9-сыныпты</strong> аяқтады.</p>
+  <p>Бізбен бірге осы қуанышты сәтті бөлісуге асығыңыз!</p>
+  <p><strong>Күні:</strong> 4 шілде 2025 жыл<br>
+     <strong>Уақыты:</strong> 19:00</p>
+</section>
+
+<section id="place">
+  <h2>Өтетін орны</h2>
+  <p>Астана Молл, Event Hall, Астана қаласы</p>
+  <p><a class="map-link" href="https://2gis.kz/astana/firm/70000001018123364" target="_blank">2ГИС картасында көру</a></p>
+</section>
+
+<section id="schedule">
+  <h2>Бағдарлама</h2>
+  <ul>
+    <li>19:00 — Қонақтарды қарсы алу және фотосессия</li>
+    <li>19:30 — Салтанатты бөлім</li>
+    <li>20:00 — Ата-аналар мен мұғалімдердің құттықтаулары</li>
+    <li>20:30 — Кешкі ас және мерекелік бағдарлама</li>
+    <li>22:00 — Музыка, би және көңілді кеш!</li>
+  </ul>
+</section>
+
+<section id="countdown">
+  <h2>Кері санау</h2>
+</section>
+
+<script>
+  const eventDate = new Date(2025, 6, 4, 19, 0, 0); // Июль — месяц 6 (от 0)
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      document.getElementById("timer").innerText = "Іс-шара басталды!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerText =
+      ${days} күн ${hours} сағат ${minutes} минут ${seconds} секунд;
+  }
+
+  updateCountdown(); // сразу показать
+  setInterval(updateCountdown, 1000); // обновлять каждую секунду
+</script>
+
+</body>
+</html>
